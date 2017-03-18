@@ -1,10 +1,12 @@
+"""
+Slack service
+
+"""
+
 import os
 import time
 import config
-from slackclient import SlackClient
-from automation_client_mock import AutomationClient
-
-
+from clients import GPIOClient
 
 # starterbot's ID as an environment variable
 BOT_ID = config.get_value('bot_id')
@@ -13,9 +15,10 @@ BOT_ID = config.get_value('bot_id')
 AT_BOT = "<@" + BOT_ID + ">"
 COMMAND = "switch"
 
-# instantiate Slack & Twilio clients
+# instantiate Slack 
 slack_client = SlackClient(config.get_value('token'))
-automation_client = AutomationClient()
+automation_client = MockClient()
+#automation_client = GPIOClient()
 
 def handle_command(command, channel):
     """
