@@ -17,8 +17,8 @@ COMMAND = "switch"
 
 # instantiate Slack 
 slack_client = SlackClient(config.get_value('token'))
-automation_client = MockClient()
-#automation_client = GPIOClient()
+#automation_client = MockClient()
+automation_client = GPIOClient()
 
 def handle_command(command, channel):
     """
