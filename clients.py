@@ -1,11 +1,29 @@
 """
-Module with different Client implementations
+Module with abstract base class (Client) and different Client implementations
 
 """
 
 import RPi.GPIO as GPIO
 
-class GPIOClient(object):
+
+class Client(object):
+    """Abstract base class used to consume & handle message
+
+    """
+
+    def __init__(self):
+        pass
+
+    def handle_message(self, msg):
+        pass
+
+
+
+class GPIOClient(Client):
+    """GPIO implementation for Client
+
+    """
+
     def __init__(self):
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(18, GPIO.OUT)
@@ -42,7 +60,7 @@ class GPIOClient(object):
 
 
         
-class MockClient:
+class MockClient(Client):
     def __init__(self):
         pass
     
