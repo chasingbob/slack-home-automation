@@ -7,6 +7,7 @@ import os
 import time
 import config
 from clients import GPIOClient
+from slackclient import SlackClient
 
 # starterbot's ID as an environment variable
 BOT_ID = config.get_value('bot_id')
