@@ -3,6 +3,7 @@
 '''
 
 import RPi.GPIO as GPIO
+from datetime import datetime
 
 
 class Client(object):
@@ -43,7 +44,7 @@ class GPIOClient(Client):
         '''Parse the message and decide what to do with it
 
         # Args:
-            msg: incoming message from Slack
+            msg: incoming message from Slack (string)
         '''
         
         # Set some defaults

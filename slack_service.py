@@ -1,9 +1,10 @@
-"""
-Slack service
+'''Slack service
 
-"""
+    Reference:
+    https://www.fullstackpython.com/blog/build-first-slack-bot-python.html
 
-import os
+'''
+
 import time
 import config
 from clients import GPIOClient
@@ -22,9 +23,9 @@ slack_client = SlackClient(config.get_value('token'))
 automation_client = GPIOClient()
 
 def handle_command(command, channel):
-    """
-        Command directed at bot, decide what to do
-    """
+    '''Command directed at bot, decide what to do
+
+    '''
     response = "Not sure what you mean. Here is an example to help you: switch braai light on"
     if command.lower().startswith(COMMAND):
         automation_client.handle_message(command.lower())
@@ -34,11 +35,10 @@ def handle_command(command, channel):
 
 
 def parse_slack_output(slack_rtm_output):
-    """
-        The Slack Real Time Messaging API is an events firehose.
-        this parsing function returns None unless a message is
-        directed at the Bot, based on its ID.
-    """
+    '''The Slack Real Time Messaging API is an events firehose.
+    this parsing function returns None unless a message is
+    directed at the Bot, based on its ID.
+    '''
     output_list = slack_rtm_output
     if output_list and len(output_list) > 0:
         for output in output_list:
