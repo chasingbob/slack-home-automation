@@ -1,30 +1,38 @@
-"""
-Module with abstract base class (Client) and different Client implementations
+'''Module with abstract base class (Client) and different Client implementations
 
-"""
+'''
 
 import RPi.GPIO as GPIO
 
 
 class Client(object):
-    """Abstract base class used to consume & handle message
+    '''Abstract base class implement to consume & handle message
 
-    """
+    '''
 
     def __init__(self):
         pass
 
     def handle_message(self, msg):
+        '''Handle incoming message specific to your client
+
+        '''
         pass
 
 
 
 class GPIOClient(Client):
-    """GPIO implementation for Client
+    '''Raspberry Pi GPIO implementation for Client
 
-    """
+    '''
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
+        '''Initialize Class
+
+        '''
+        super(GPIOClient, self).__init__(*args, **kwargs)
+
+        self.time = datetime.now()
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(18, GPIO.OUT)
 
@@ -32,12 +40,11 @@ class GPIOClient(Client):
         self.devices = ['braai-light', 'man-cave-heater']
     
     def handle_message(self, msg):
-        """
-        Parse the message and decide what to do with it
+        '''Parse the message and decide what to do with it
 
-        # Parameters
+        # Args:
             msg: incoming message from Slack
-        """
+        '''
         
         # Set some defaults
         what = self.whats[0]
@@ -61,6 +68,9 @@ class GPIOClient(Client):
 
         
 class MockClient(Client):
+    '''Used to test on non Raspberry Pi devices
+
+    '''
     def __init__(self):
         pass
     
