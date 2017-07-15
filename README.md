@@ -20,7 +20,7 @@ Before you start with the slack bot make sure you have a Raspberry Pi setup, the
 
 ![Raspberry Pi GPIO Header](images/pi-pin-layout.jpg)
 
-For the project we will be using pin 18 (GPIO24) - as 
+For the project we will be using pin 18 (GPIO24) - make sure to update the ***GPIOClient** in *clients.py* if you choose to use a different gpio pin.
 
 ### 5V Relay
 
