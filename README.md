@@ -16,15 +16,19 @@ Braai is a big part of South African culture and to make sure your rump steak is
 
 ![Raspberry Pi](images/pi.jpg)
 
-Before you start with the slack bot make sure you have a Raspberry Pi setup, the [official documentation](https://www.raspberrypi.org/documentation/setup/) is an excellent way to start.
-
-![Raspberry Pi GPIO Header](images/pi-pin-layout.jpg)
-
-For the project we will be using pin 18 (GPIO24) - make sure to update the ***GPIOClient** in *clients.py* if you choose to use a different gpio pin.
+Before you start with the slack bot make sure you have a Raspberry Pi set up, the [official documentation](https://www.raspberrypi.org/documentation/setup/) is an excellent way to start.
 
 ### 5V Relay
 
+For the project I'm using a [5V relay](https://www.robotics.org.za/relay-2-channel-5-volt-im120525001?search=relay) I bought from Micro Robotics.
+
 ![5V Relay](images/relay.jpg)
+
+### Raspberry Pi Pin Layout
+
+![Raspberry Pi GPIO Header](images/pi-pin-layout.jpg)
+
+For the project we will be using pin 18 (GPIO24) - make sure to update the **GPIOClient** in *clients.py* if you choose to use a different gpio pin.
 
 Use the Raspberry Pi GPIO Header diagram as guide and connect the following pins.
 
@@ -55,13 +59,13 @@ Clone the project
 git clone https://github.com/chasingbob/slack-home-automation.git
 ```
 
-run print_bot_id.py the first time and save your 'bot_id' 
+run *print_bot_id.py* the first time and save your 'bot_id' 
 
 ```
 python3 print_bot_id.py
 ```
 
-Create a config.json file and add the following to it:
+Create a config file called *config.json* and add the following to it:
 
 ```
 {
