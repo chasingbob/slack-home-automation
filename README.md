@@ -19,9 +19,7 @@ Braai is a big part of South African culture and to make sure your rump steak is
 
 Before you start with the slack bot make sure you have a Raspberry Pi setup, the [official documentation](https://www.raspberrypi.org/documentation/setup/) is an excellent way to start.
 
-
 ![Raspberry Pi GPIO Header](images/pi-pin-layout.jpg)
-
 
 ### 5V Relay
 
@@ -74,11 +72,11 @@ Create a config.json file and add the following to it:
 
 ### Switching your light on/off
 
-Now you log into Slack with your phone/computer and literally ask your slack bot to switch your braai-light on by using the following command in your home-automation channel.
+Log into and literally ask your *slack bot* to switch your *braai-light* on by using the following command in your home-automation channel.
 
-'''
+```
 @your-bot switch braai-light on
-'''
+```
 
 
 ## Release History
