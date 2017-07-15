@@ -93,7 +93,7 @@ Log into Slack and ask your *slack bot* to switch your *braai-light* on by typin
 @your-bot switch braai-light off
 ```
 
-I feel like I have only touched the surface and for a follow up I'm planning on ways to incorporate NLP (Natural Language Processing) to make the interaction with the *slack-bot* feel more natural, like having a conversation.
+I feel like I have only touched the surface and for a follow up I'm planning on exploring ways to incorporate NLP (Natural Language Processing) to make the interaction with the *slack-bot* feel more natural, like having a conversation.
 
 ## Release History
 
