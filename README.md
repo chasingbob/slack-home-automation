@@ -6,7 +6,6 @@ Braai is a big part of South African culture and to make sure your rump steak is
 
 
 ![Braai area](images/braai.jpg)
-![With light on](images/braai-with-light.jpg)
 
 
 
@@ -78,6 +77,13 @@ Log into and literally ask your *slack bot* to switch your *braai-light* on by u
 @your-bot switch braai-light on
 ```
 
+![With light on](images/braai-with-light.jpg)
+
+... and to switch light of is as simple as
+
+```
+@your-bot switch braai-light off
+```
 
 ## Release History
 
