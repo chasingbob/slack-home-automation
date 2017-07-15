@@ -1,7 +1,7 @@
 # slack-home-automation
 > Using Slack for your home automation
 
-Braai is a big part of South African culture and to make sure your rump steak is a perfect medium-rare you need a decent light to shine on the braai at will. It is also important to be able to control your light with a slack bot - off course!
+Braai is a big part of South African culture and to make sure your rump steak is a perfect medium-rare you need a decent light to shine on the braai at will. It is also important to be able to control your light with a *slack-bot* - off course!
 
 
 
@@ -19,6 +19,8 @@ Braai is a big part of South African culture and to make sure your rump steak is
 Before you start with the slack bot make sure you have a Raspberry Pi setup, the [official documentation](https://www.raspberrypi.org/documentation/setup/) is an excellent way to start.
 
 ![Raspberry Pi GPIO Header](images/pi-pin-layout.jpg)
+
+For the project we will be using pin 18 (GPIO24) - as 
 
 ### 5V Relay
 
@@ -69,9 +71,15 @@ Create a config.json file and add the following to it:
 }
 ```
 
+You are now ready to start the *slack_service*.
+
+```
+python3 slack_service.py
+```
+
 ### Switching your light on/off
 
-Log into and literally ask your *slack bot* to switch your *braai-light* on by using the following command in your home-automation channel.
+Log into Slack and ask your *slack bot* to switch your *braai-light* on by typing the following command in your *home-automation* channel.
 
 ```
 @your-bot switch braai-light on
@@ -79,11 +87,13 @@ Log into and literally ask your *slack bot* to switch your *braai-light* on by u
 
 ![With light on](images/braai-with-light.jpg)
 
-... and to switch light of is as simple as
+... and to switch light off is as simple as
 
 ```
 @your-bot switch braai-light off
 ```
+
+I feel like I have only touched the surface and for a follow up I'm planning on ways to incorporate NLP (Natural Language Processing) to make the interaction with the *slack-bot* feel more natural, like having a conversation.
 
 ## Release History
 
